@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container{
+            height: 120px;
+            width: auto;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            padding: 0 120px;
+        }
+        
+        div.box{
+            height: 100px;
+            width: 100px;
+
+            border: 3px solid blueviolet;
+            border-radius: 5px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container" >
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <script>
+        let classs = document.getElementsByClassName('container')
+        let boxs = document.getElementsByClassName('box');
+        let body = document.getElementsByTagName('body')
+        let input = document.getElementById('input');
+        let array = [];
+        let i = 0;
+     
+        //document.addEventListener('keydown', e => document.body.innerHTML = `<div>e.code: ${e.code}</div><div> e.key: ${e.key}</div>`);
+
+        const remove = () => {
+            if(i > 0 && i <= 5){
+                i--;
+                boxs[i].innerHTML = '';
+            }
+        }
+
+        body[0].addEventListener(
+        'keyup', 
+        (e) => {
+            let element = e.key;
+            if(element == 'Backspace' ){
+                console.log('apagar')
+                remove();
+            }else{
+                switch (i) {
+                    case 0:
+                        boxs[i].innerHTML = e.key;
+                         i++;
+                        break;
+                    case 1:
+                        boxs[i].innerHTML = e.key;
+                         i++;
+                        break;
+                    case 2:
+                        boxs[i].innerHTML = e.key;
+                         i++;
+                        break;
+                    case 3:
+                        boxs[i].innerHTML = e.key;
+                         i++;
+                        break;
+                    case 4:
+                        boxs[i].innerHTML = e.key;
+                         i++;
+                        break;
+                    default:
+                        console.log('está cheio');
+                }
+               
+            }  
+        })
+
+            
+    </script>
+</body>
+</html>

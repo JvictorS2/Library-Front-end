@@ -1,0 +1,25 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.wrapper1{
+    height: 80vh;
+    width: 80vw;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #1626b8 5%, #5262f3 30%, #8995ff 80%, #c9ceff 100%);
+    margin: 15px;
+}
+
+.wrapper2{
+    height: 80vh;
+    width: 80vw;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #01443e 5%, #017265 30%, #24cbbd 80%, #acfff7 100%);
+    margin: 15px;
+}

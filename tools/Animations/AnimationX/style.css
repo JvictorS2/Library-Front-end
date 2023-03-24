@@ -1,0 +1,55 @@
+
+div.Three-lines{
+    height: 20px;
+    width: 20px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+
+    cursor: pointer;
+    position: relative;
+}
+
+div.line1,
+div.line2,
+div.line3{
+    width: 20px;
+    height: 3px;
+
+    border-radius: 3px;
+    position: absolute;
+
+    background-color: #000;
+    transition: transform 1000ms, opacity 1000ms ;
+}
+
+div.line1{
+    top: 2px;
+}
+
+div.line2{
+   top: 8px;
+}
+
+div.line3{
+   top: 14px;
+}
+
+/* Animations */
+
+div.ClickOn div.line1{
+    top:9px;
+    transform: rotate(135deg)
+}
+
+div.ClickOn div.line2{
+    opacity: 0;
+
+    transition: opacity 0s;
+}
+
+div.ClickOn div.line3{
+    top: 9px;
+    transform: rotate(225deg)
+}

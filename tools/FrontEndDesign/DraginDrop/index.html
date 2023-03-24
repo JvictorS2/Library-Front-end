@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: aliceblue;
+    }
+
+    main{
+        display: flex;
+        flex-direction:column ;
+        justify-content: center;
+        align-items: center;
+
+        padding: 16px;
+    }
+
+    div.Repo{
+        width: 97vw;
+        min-height: 250px;
+        background-color: steelblue;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        padding: 16px;
+
+        display: flex;
+
+    }
+
+    div.RepoElement{
+        width: 30%;
+        border: 1px solid #000;
+        border-radius: 15px;
+        padding: 8px;
+        background-color: indigo;
+    }
+
+    div.RepoElement header{
+        background-color:  blueviolet;
+        border-radius: 12px 12px 0 0;
+        padding: 8px;
+        margin: -9px -9px 8px -9px;
+    }
+
+    
+
+    div.Drop{
+        width: 97vw;
+        min-height: 200px;
+        background-color: violet;
+        border-radius: 15px;
+
+        padding: 16px;
+
+        display: flex;
+    }
+
+    div.RepoElement{
+        width: 30%;
+        border: 1px solid #000;
+        border-radius: 15px;
+        padding: 8px;
+        background-color: indigo;
+        margin: 0 16px;
+    }
+
+    div.RepoElement header{
+        background-color:  blueviolet;
+        border-radius: 12px 12px 0 0;
+        padding: 8px;
+        margin: -9px -9px 8px -9px;
+    }
+
+    </style>
+</head>
+<body>
+    <main>
+       <!--  permissão de retirada de elemento, preciso entregar id para fazer o preocesso de permitir a volta, limp. info do dataTransfer-->
+        <div class="Repo" ondragover="allowDrop(event)" ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <div class="RepoElement" draggable="true" ondragstart="drag(event)" id="item1" >
+                <header>
+                    1. Primerio elemento
+                </header>
+                <section>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi inventore libero sunt maxime consequuntur vero hic omnis odio earum odit officia tempora, soluta numquam deleniti doloribus quia dicta nulla accusantium.
+                </section>
+            </div>
+            <div class="RepoElement" draggable="true" ondragstart="drag(event)" id="item2">
+                <header>
+                    2. Segundo elemento
+                </header>
+                <section>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi inventore libero sunt maxime consequuntur vero
+                    hic omnis odio earum odit officia tempora, soluta numquam deleniti doloribus quia dicta nulla accusantium.
+                </section>
+            </div>
+            <div class="RepoElement" draggable="true" ondragstart="drag(event)" id="item3">
+                <header>
+                    3. Terceiro elemento
+                </header>
+                <section>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi inventore libero sunt maxime consequuntur vero
+                    hic omnis odio earum odit officia tempora, soluta numquam deleniti doloribus quia dicta nulla accusantium.
+                </section>
+            </div>
+        </div>
+        
+        <div class="Drop" ondrop="drop(event)" ondragover="allowDrop(event)"  id="item4" >
+            
+        </div>
+    </main>
+
+
+    <script>
+        //carregar a informação do id
+        let draggedItemId = "";
+
+        //habilita a area a manipular o elemento voador
+        function allowDrop(ev){
+            ev.preventDefault();
+        }
+
+        //informação do id
+        //inicia arrastar
+        function drag(ev){
+            ev.dataTransfer.setData('text', ev.target.id);
+            draggedItemId = ev.target.id;
+        }
+
+        //inicia soltar
+        function drop(ev){
+            ev.preventDefault()
+            let data = ev.dataTransfer.getData('text');
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+    </script>
+</body>
+</html>
