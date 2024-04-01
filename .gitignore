@@ -1,0 +1,30 @@
+# Arquivos temporários
+ obj/ 
+bin/ 
+
+# Arquivos de compilação 
+*.dll 
+*.exe 
+
+# Arquivos de publicação 
+publish/ 
+
+# Logs e arquivos temporários 
+*.log 
+*.config 
+*.bak 
+
+# Pacotes NuGet 
+packages/ 
+# Arquivos de configuração doVisual Studio
+ .vs/ 
+*.vscode/
+*.suo 
+*.user 
+*.sln.docstates
+ 
+# Pasta de ferramentas doRider 
+.idea/
+ 
+# Pasta de cache doVisual Studio Code 
+.vscode/
